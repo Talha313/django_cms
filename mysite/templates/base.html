@@ -1,0 +1,147 @@
+{% load cms_tags menu_tags sekizai_tags %}
+{% load static %}
+{#<!doctype html>#}
+{#<html>#}
+{#    <head>#}
+{#        <title>{% block title %}This is my new project home page{% endblock title %}</title>#}
+{#        <meta name="viewport" content="width=device-width,initial-scale=1">#}
+{#        <style type="text/css">#}
+{#            .nav {#}
+{#                padding-left: 0;#}
+{#            }#}
+{#            .nav li {#}
+{#                display: inline;#}
+{#                list-style-type: none;#}
+{#                padding-right: 20px;#}
+{#            }#}
+{#            .container {#}
+{#                width: 940px;#}
+{#                margin: 0 auto#}
+{#            }#}
+{#            .content {#}
+{#                float: left;#}
+{#                width: 80%;#}
+{#            }#}
+{#            .sidebar {#}
+{#                float: left;#}
+{#                width: 20%;#}
+{#            }#}
+{#        </style>#}
+{#        {% render_block "css" %}#}
+{#    </head>#}
+{#    <body>#}
+{#        {% cms_toolbar %}#}
+{#        <div class="container">#}
+{#            <ul class="nav">#}
+{#                {% show_menu 0 100 100 100 %}#}
+{#            </ul>#}
+{#            {% block content %}{% endblock content %}#}
+{#        </div>#}
+{#        {% render_block "js" %}#}
+{#    </body>#}
+{#</html>#}
+
+{#{% load cms_tags menu_tags sekizai_tags staticfiles %}#}
+
+<!DOCTYPE html>
+<html class="sticky-header-reveal">
+<head>
+    <meta charset="utf-8">
+    <title>Jet.Law</title>
+    <meta name="keywords" content="HTML5 Template"/>
+    <meta name="description" content="Master - Responsive HTML5 Template">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <link rel="shortcut icon" type="image/png" href="assets/img/favicon.png"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Web Fonts  -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600" rel="stylesheet">
+
+    <!-- Libs CSS -->
+    <link href="{% static 'vendor/bootstrap/css/bootstrap.css' %}" rel="stylesheet"/>
+    <link href="{% static 'vendor/font-awesome/css/all.min.css' %}" rel="stylesheet"/>
+    <link href="{% static 'vendor/font-awesome/css/fontawesome.min.css' %}" rel="stylesheet"/>
+    <link href="{% static 'vendor/streamline-icon/css/streamline-icon.css' %}" rel="stylesheet"/>
+    <link href="{% static 'vendor/cubeportfolio/css/cubeportfolio.min.css' %}" rel="stylesheet"/>
+    <link href="{% static 'css/header-new.css' %}" rel="stylesheet"/>
+    <link href="{% static 'css/style.css' %}" rel="stylesheet"/>
+    <link href="{% static 'css/shortcodes.css' %}" rel="stylesheet"/>
+    <link href="{% static 'css/utilities.css' %}" rel="stylesheet"/>
+
+    <!-- Skin -->
+    <link rel="stylesheet" href="{% static 'css/skin/default.css' %}">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+        <style type="text/css">
+            {#.nav {#}
+            {#    padding-left: 0;#}
+            {#}#}
+            {#.nav li {#}
+            {#    display: inline;#}
+            {#    list-style-type: none;#}
+            {#    padding-right: 20px;#}
+            {#}#}
+            {#.container {#}
+            {#    width: 940px;#}
+            {#    margin: 0 auto#}
+            {#}#}
+            {#.content {#}
+            {#    float: left;#}
+            {#    width: 80%;#}
+            {#}#}
+            {#.sidebar {#}
+            {#    float: left;#}
+            {#    width: 20%;#}
+            {#}#}
+        </style>
+        {% render_block "css" %}
+</head>
+{% cms_toolbar %}
+<body>
+
+<div class="wrapper">
+
+    <!--Header-->
+    {% include 'common/header.html' %}
+    <!--End Header-->
+
+    <main class="main-content">
+        {% block top_banner %}
+            {% include 'common/top_banner.html' %}
+        {% endblock %}
+
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <!-- FOOTER -->
+    {% include 'common/footer.html' %}
+    <!-- END FOOTER -->
+</div>
+
+<!-- Libs -->
+<script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+<script src="{% static 'vendor/jquery/jquery-migrate.min.js' %}"></script>
+<script src="{% static 'vendor/jquery/jquery.visible.min.js' %}"></script>
+<script src="{% static 'vendor/bootstrap/js/popper.js' %}"></script>
+<script src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+<script src="{% static 'vendor/cubeportfolio/js/jquery.cubeportfolio.min.js' %}"></script>
+<script src="{% static 'js/cubeportfolio.init.js' %}"></script>
+<script src="{% static 'vendor/slick-slider/slick.js' %}"></script>
+<script src="{% static 'js/prism.js' %}"></script>
+
+<script src="{% static 'js/page.js' %}"></script>
+<script src="{% static 'js/other.js' %}"></script>
+<script src="{% static 'js/script.js' %}"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+
+<!-- Theme Custom -->
+<script src="{% static 'js/custom.js' %}"></script>
+ {% render_block "js" %}
+</body>
+</html>
+

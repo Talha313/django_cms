@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load cms_tags %}
+{% block top_banner %}
+{% endblock %}
+{% block content %}
+    {% for about in abouts %}
+    <section class="section border-bottom pb-0">
+        <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 col-md-12 col-lg-6">
+                        {% if about.image %}
+                            <img class="w-100 pr-4" src="{{ about.image.url }}"/>
+                        {% endif %}
+                    </div>
+                    <div class="col-sm-12 col-md-12 col-lg-6">
+                        <div class="clearfix pl-4 pt-9">
+
+                            <h2 class="mb-5 fs-40">
+                                {%  render_model  about "name" %}
+
+
+                            </h2>
+                            <h2 class="o-7">{%   render_model about 'designation' %}</h2>
+                            {% if about.education %}
+                                <p class="fs-18 fw-300">
+                                    ​Education:<br/>
+
+                                </p>
+
+                                {% render_model about 'education'  %}
+
+                            {% endif %}
+
+                            {% if about.biography %}
+                                <p class="fs-18 fw-300">
+                                    ​Biography: <br/>
+
+                                </p>
+
+                                {% render_model about 'biography' %}
+
+                            {% endif %}
+                        <br>
+
+                            {% if about.linkedIn %}
+                                <a target="_blank" href="{{ about.linkedIn }}"><img style="height: 20px; width: 20px; "
+                                                                                    src="{% static 'img/in.svg' %}"/></a>
+                                &nbsp;&nbsp;&nbsp;
+                            {% endif %}
+
+
+                            {% if about.linkedIn %}
+                                <a target="_blank" href="{{ about.email }}"><img style="height: 20px; width: 20px; "
+                                                                                    src="{% static 'img/mail.svg' %}"/></a>
+
+                            {% endif %}
+                            {#                        <div class="row pt-4">#}
+                            {#                            <div class="col-sm-4">#}
+                            {#                                <div class="clearfix text-aling-left">#}
+
+                            {#                                    <h2 class="fs-50 font-weight-medium text-primary" data-provide="countup"#}
+                            {#                                        data-from="0" data-to="120"></h2>#}
+                            {#                                    <h6 class="v-counter-text">Happy Clients</h6>#}
+                            {#                                </div>#}
+                            {#                            </div>#}
+                            {#                            <div class="col-sm-4">#}
+                            {#                                <div class="clearfix text-aling-left">#}
+                            {#                                    <h2 class="fs-50 font-weight-medium text-primary" data-provide="countup"#}
+                            {#                                        data-from="0" data-to="120"></h2>#}
+                            {#                                    <h6 class="v-counter-text">Tickets Closed</h6>#}
+                            {#                                </div>#}
+                            {#                            </div>#}
+                            {#                            <div class="col-sm-4">#}
+                            {#                                <div class="clearfix text-aling-left">#}
+                            {#                                    <h2 class="fs-50 font-weight-medium text-primary" data-provide="countup"#}
+                            {#                                        data-from="0" data-to="120"></h2>#}
+                            {#                                    <h6 class="v-counter-text">Item Sold</h6>#}
+                            {#                                </div>#}
+                            {#                            </div>#}
+                        </div>
+                    </div>
+                </div>
+                </div>
+{#        </div>#}
+
+    </section>
+
+    {% endfor %}
+
+
+{% endblock %}

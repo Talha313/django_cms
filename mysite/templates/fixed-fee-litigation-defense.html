@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load cms_tags %}
+{% load static %}
+
+{% block top_banner %}
+{#    <img src="{% static 'img/New-York.jpg' %}" />#}
+{% endblock %}
+
+{% block content %}
+    <style>
+.parallax {
+  /* The image used */
+  background-image: url("{% static 'img/New-York.jpg' %}");
+
+  /* Set a specific height */
+  min-height: 380px;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  {#background-position: center;#}
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+</style>
+    <main class="main-content">
+    <div class="parallax" style="text-align: center"></div>
+        <section id="read-all" class="section pt-9">
+            <div class="container">
+                <div class="row">
+                    <h2 style="font-weight: bold">{% placeholder 'title' %}</h2>
+
+                    <div class="col-lg-10" style="margin-top: 35px">
+                        <p class="font-detail">
+                        {% placeholder 'content' %}
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+{% endblock %}

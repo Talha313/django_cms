@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load cms_tags %}
+{% block top_banner %}{% endblock %}
+
+{% block content %}
+    <main   class="main-content">
+        <section style="background-image: url({% static 'img/discrimination.jpg' %})" id="read-all" >
+            <div  class="container">
+                <div class="row" >
+                    <h2 style="font-weight: bold; margin-top:30px">{% placeholder 'title' %}</h2>
+                    <div  class="col-lg-9" style="margin-top: 20px">
+                        <p class="detail-font">
+                            {% placeholder 'content' %}
+                        </p>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+{% endblock %}

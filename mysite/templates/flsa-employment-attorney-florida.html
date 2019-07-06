@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load cms_tags %}
+{% load static %}
+{% block top_banner %}{% endblock %}
+
+{% block content %}
+    <main class="main-content">
+        <section id="read-all" class="section pt-9">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                    <h2 style="font-weight: bold; text-align: center">Fixed Price Employment Attorneys in Florida</h2>
+                    </div>
+                    <div class="col-lg-5 offset-1" style="margin-top: 35px">
+                         <a href="{% url 'webapp:contact' %}" >
+                        <button type="button" class="btn btn-outline-secondary btn-sm">I'VE BEEN SUED, WHAT NEXT?</button>
+                        </a>
+                    </div>
+                    <div class="col-lg-5 offset-md-1" style="margin-top: 35px">
+                         <a  href="{% url 'webapp:contact' %}" class=''>
+                        <button type="button" class="btn btn-outline-secondary btn-sm"> I'VE BEEN THREATENED WITH A SUIT, WHAT NEXT?</button>
+                        </a>
+
+                    </div>
+
+                    <div class="col-lg-12 mt-6">
+                        <p class="detail-font">
+                            {% placeholder 'content_first' %}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+        <main style="background: #bde9fb" class="main-content">
+         <section  id="read" class="section pt-9">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                   {% placeholder 'content_second' %}
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+{% endblock %}
