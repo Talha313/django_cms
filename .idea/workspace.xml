@@ -31,11 +31,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mysite/templates/common/header.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="150">
               <caret line="10" selection-start-line="10" selection-end-line="10" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/mysite/templates/common/top_banner.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="15" column="63" selection-start-line="15" selection-start-column="63" selection-end-line="15" selection-end-column="63" />
             </state>
           </provider>
         </entry>
@@ -89,10 +98,12 @@
       <find>blog</find>
     </findStrings>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/mysite/templates/common/top_banner.html" />
         <option value="$PROJECT_DIR$/accounts/urls.py" />
         <option value="$PROJECT_DIR$/webapp/views.py" />
         <option value="$PROJECT_DIR$/accounts/models.py" />
@@ -139,6 +150,7 @@
         <option value="$PROJECT_DIR$/mysite/templates/fixed-fee-litigation-defense.html" />
         <option value="$PROJECT_DIR$/mysite/templates/common/footer.html" />
         <option value="$PROJECT_DIR$/mysite/templates/common/header.html" />
+        <option value="$PROJECT_DIR$/mysite/templates/common/top_banner.html" />
       </list>
     </option>
   </component>
@@ -148,6 +160,7 @@
     <option name="width" value="1280" />
     <option name="height" value="555" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -301,22 +314,21 @@
       <workItem from="1562334966810" duration="11453000" />
       <workItem from="1562360998310" duration="4012000" />
       <workItem from="1562404147573" duration="4012000" />
-      <workItem from="1562424353108" duration="10576000" />
+      <workItem from="1562424353108" duration="10905000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="90452000" />
+    <option name="totallyTimeSpent" value="90781000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1299" height="743" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.30007982" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.30007982" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Database Changes" order="0" />
-      <window_info anchor="bottom" id="Terminal" order="1" sideWeight="0.49960095" visible="true" weight="0.38409474" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="1" sideWeight="0.49960095" visible="true" weight="0.38539898" />
       <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.50039905" side_tool="true" weight="0.38409474" />
       <window_info anchor="bottom" id="Version Control" order="3" />
       <window_info anchor="bottom" id="Python Console" order="4" />
@@ -381,13 +393,6 @@
     <entry file="file://$PROJECT_DIR$/mysite/apps/blogs/tests.py" />
     <entry file="file://$PROJECT_DIR$/mysite/apps/webapp/menu.py" />
     <entry file="file://$PROJECT_DIR$/mysite/apps/blogs/admin.py" />
-    <entry file="file://$PROJECT_DIR$/mysite/templates/common/top_banner.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-105">
-          <caret line="5" column="48" selection-start-line="5" selection-start-column="45" selection-end-line="5" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mysite/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -659,6 +664,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
           <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysite/templates/common/top_banner.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="15" column="63" selection-start-line="15" selection-start-column="63" selection-end-line="15" selection-end-column="63" />
         </state>
       </provider>
     </entry>
