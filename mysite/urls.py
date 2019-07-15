@@ -26,6 +26,10 @@ urlpatterns += i18n_patterns(
     url(r'^admin/', admin.site.urls),  # NOQA
     url(r'^accounts/', include('accounts.urls')),  # new
     url(r'^accounts/', include('django.contrib.auth.urls')),
+
+    # url(r'^accounts/login/$', 'django.contrib.auth.views.login', name='login'),
+
+
     # (r'^ckeditor/', include('ckeditor.urls')),
     # url(r'^webapp/', include('mysite.apps.webapp.urls')),  # webapp
     url(r'^', include('blogs.urls')),  # blogs_app

@@ -1,7 +1,9 @@
 {% extends 'base.html' %}
+{% load cms_tags %}
 {% load static %}
 
-
+{% block top_banner %}{% endblock %}
+{% block title %}{% page_attribute page_title %}{% endblock %}
 {% block content %}
     <div class="wrapper bg-light">
 
@@ -182,10 +184,10 @@
                                 <div class="tab-pane fade" id="mtab2" role="tabpanel" aria-labelledby="profile-tab">
                                     <div class="h-500"
                                          data-provide="map"
-                                         data-lat="41.0187429"
-                                         data-lng="28.6390396"
-                                         data-marker-lat="41.0187429"
-                                         data-marker-lng="28.6390396"
+                                         data-lat="31.474884"
+                                         data-lng=" 74.407183"
+                                         data-marker-lat="31.474884"
+                                         data-marker-lng="74.407183"
                                          data-info="Üçevler mah, Urfalılar Cd. No:71/C, 34513 Esenyurt/İstanbul"></div>
                                 </div>
                             </div>

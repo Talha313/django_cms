@@ -34,13 +34,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 
-
-
-
 ROOT_URLCONF = 'mysite.urls'
-
-
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
@@ -55,7 +49,7 @@ USE_L10N = True
 
 USE_TZ = True
 
-LOGIN_REDIRECT_URL = ''
+LOGIN_REDIRECT_URL = 'webapp:dashboard'
 LOGOUT_REDIRECT_URL = ''
 
 # Static files (CSS, JavaScript, Images)
@@ -70,7 +64,6 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'mysite', 'static'),
 )
 SITE_ID = 1
-
 
 TEMPLATES = [
     {
@@ -98,7 +91,6 @@ TEMPLATES = [
         },
     },
 ]
-
 
 MIDDLEWARE = [
     'cms.middleware.utils.ApphookReloadMiddleware',
@@ -202,6 +194,9 @@ CMS_PERMISSION = True
 
 CMS_PLACEHOLDER_CONF = {}
 
+
+
+
 DATABASES = {
     'default': {
         'CONN_MAX_AGE': 0,
@@ -225,13 +220,14 @@ THUMBNAIL_PROCESSORS = (
     'easy_thumbnails.processors.filters'
 )
 
+# APPEND_SLASH = False
+
+USE_I18N = False
+
+USE_L10N = False
 
 
 
-
-
-
-CKEDITOR_UPLOAD_PATH = os.path.join('/home/talha/Desktop/jet-test-project/media')
 EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
 EMAIL_FILE_PATH = os.path.join(BASE_DIR, "sent_emails")
 

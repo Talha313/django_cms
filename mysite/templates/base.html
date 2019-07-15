@@ -1,53 +1,15 @@
 {% load cms_tags menu_tags sekizai_tags %}
 {% load static %}
-{#<!doctype html>#}
-{#<html>#}
-{#    <head>#}
-{#        <title>{% block title %}This is my new project home page{% endblock title %}</title>#}
-{#        <meta name="viewport" content="width=device-width,initial-scale=1">#}
-{#        <style type="text/css">#}
-{#            .nav {#}
-{#                padding-left: 0;#}
-{#            }#}
-{#            .nav li {#}
-{#                display: inline;#}
-{#                list-style-type: none;#}
-{#                padding-right: 20px;#}
-{#            }#}
-{#            .container {#}
-{#                width: 940px;#}
-{#                margin: 0 auto#}
-{#            }#}
-{#            .content {#}
-{#                float: left;#}
-{#                width: 80%;#}
-{#            }#}
-{#            .sidebar {#}
-{#                float: left;#}
-{#                width: 20%;#}
-{#            }#}
-{#        </style>#}
-{#        {% render_block "css" %}#}
-{#    </head>#}
-{#    <body>#}
-{#        {% cms_toolbar %}#}
-{#        <div class="container">#}
-{#            <ul class="nav">#}
-{#                {% show_menu 0 100 100 100 %}#}
-{#            </ul>#}
-{#            {% block content %}{% endblock content %}#}
-{#        </div>#}
-{#        {% render_block "js" %}#}
-{#    </body>#}
-{#</html>#}
-
-{#{% load cms_tags menu_tags sekizai_tags staticfiles %}#}
 
 <!DOCTYPE html>
 <html class="sticky-header-reveal">
 <head>
     <meta charset="utf-8">
-    <title>Jet.Law</title>
+{#    <title>Jet.Law</title>#}
+    <title>
+        {% block title %}
+        {% endblock %}
+    </title>
     <meta name="keywords" content="HTML5 Template"/>
     <meta name="description" content="Master - Responsive HTML5 Template">
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -75,28 +37,6 @@
     <link rel="stylesheet" href="{% static 'css/custom.css' %}">
 
       <meta name="viewport" content="width=device-width,initial-scale=1">
-        <style type="text/css">
-            {#.nav {#}
-            {#    padding-left: 0;#}
-            {#}#}
-            {#.nav li {#}
-            {#    display: inline;#}
-            {#    list-style-type: none;#}
-            {#    padding-right: 20px;#}
-            {#}#}
-            {#.container {#}
-            {#    width: 940px;#}
-            {#    margin: 0 auto#}
-            {#}#}
-            {#.content {#}
-            {#    float: left;#}
-            {#    width: 80%;#}
-            {#}#}
-            {#.sidebar {#}
-            {#    float: left;#}
-            {#    width: 20%;#}
-            {#}#}
-        </style>
         {% render_block "css" %}
 </head>
 {% cms_toolbar %}
@@ -141,6 +81,32 @@
 
 <!-- Theme Custom -->
 <script src="{% static 'js/custom.js' %}"></script>
+<script>
+    $(".header-btn-collapse-nav").click(function () {
+
+        if ($('.collapse').hasClass('show')) {
+            $('.collapse').removeClass('show');
+            $(this).attr('aria-expanded', false);
+
+            if ($(this).attr('data-toggle') == 'collapse') {
+                $('.header-btn-collapse-nav').attr('data-toggle', 'collapse1');
+                var collapse = setInterval(collapseH, 200);
+
+                function collapseH() {
+                    $('.header-btn-collapse-nav').attr('data-toggle', 'collapse');
+                    clearInterval(collapse);
+                }
+
+            } else {
+                $('.header-btn-collapse-nav').attr('data-toggle', 'collapse');
+            }
+        }
+
+
+    });
+</script>
+
+
  {% render_block "js" %}
 </body>
 </html>

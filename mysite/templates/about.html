@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 {% load cms_tags %}
+{% block title %}{% page_attribute page_title %}{% endblock %}
 {% block top_banner %}
 {% endblock %}
 {% block content %}

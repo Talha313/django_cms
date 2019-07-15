@@ -28,8 +28,15 @@ class AboutView(TemplateView):
     def get(self, request):
         # import pdb;pdb.set_trace()
         abouts = About.objects.filter(is_active=True)
+        print(abouts)
         return render(request, self.template_name, {'abouts': abouts, 'about':'active'})
 
+class Dashboard(TemplateView):
+    template_name = 'dashboard.html'
+
+
+    def get(self, request):
+        return render(request, self.template_name)
 
 
 class ContactView(TemplateView):

@@ -27,6 +27,7 @@
 	border-top: 3px solid transparent;
 	border-bottom: 1px solid transparent;
 	z-index: 1001;
+	height:auto !important;
 }
 
 #header .header-body.header-body-bottom-border-fixed {
