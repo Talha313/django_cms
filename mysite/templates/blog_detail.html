@@ -2,6 +2,7 @@
 {% load static %}
 {% block top_banner %}{% endblock %}
 
+{% block title %}jet.law-blog-detail{% endblock %}
 {% block content %}
 
     <main class="main-content">
@@ -18,7 +19,7 @@
 
                             <div class="d-flex align-items-center mb-5 mt-4">
                                 <div class="avatar mr-4">
-                                    <img class="img-fluid rounded-circle" src="{{ blog.image.url }}"
+                                    <img class="img-fluid rounded-circle" src="{% if blog.image %} {{ blog.image.url }} {% else %}{{ "" }} %} {% endif %}"
                                          alt="Image Description">
                                 </div>
                                 <div class="mr-7">
@@ -58,58 +59,14 @@
                     <div class="col-lg-8">
 
                         <p>
-                            {{ blog.content | safe }}
-                            {#                                Mauris mattis auctor cursus. Phasellus tellus tellus, imperdiet ut imperdiet eu, iaculis a sem.#}
-                            {#                                Donec vehicula luctus nunc in laoreet. Aliquam erat volutpat. Suspendisse vulputate porttitor condimentum.#}
-                            {#                                Proin viverra orci a leo suscipit placerat. Sed feugiat posuere semper. Cras vitae mi erat, posuere mollis arcu.#}
-                            {#                                Pellentesque iaculis gravida nulla ac hendrerit. Vestibulum faucibus neque at lacus tristique eu ultrices ipsum mollis.#}
-                            {#                                Phasellus venenatis, lacus in malesuada pellentesque, nisl ipsum faucibus velit, et eleifend velit nulla a mi.#}
-                            {#                                Praesent pharetra semper purus, a vehicula massa interdum in. Nulla a magna at diam consequat semper eu vitae elit.#}
-                            {#                                In hac habitasse platea dictumst.#}
-                            {#                            </p>#}
-                            {##}
-                            {#                            <blockquote class="blockquote testimonial-quote ml-8 mt-4">#}
-                            {#                                <p class="mb-0 text-dark fw-500">#}
-                            {#                                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.#}
-                            {#                                    Cum sociis natoque penatibus et magnis dis parturient montes, nisl ipsum faucibus velit, et eleifend velit nulla a mi nascetur ridiculus mus.#}
-                            {#                                </p>#}
-                            {#                            </blockquote>#}
-                            {##}
-                            {#                            <p>#}
-                            {#                                Mauris mattis auctor cursus. Phasellus tellus tellus, imperdiet ut imperdiet eu, iaculis a sem.#}
-                            {#                                Donec vehicula luctus nunc in laoreet. Aliquam erat volutpat. Suspendisse vulputate porttitor condimentum.#}
-                            {#                                Proin viverra orci a leo suscipit placerat. Sed feugiat posuere semper. Cras vitae mi erat, posuere mollis arcu.#}
-                            {#                                Pellentesque iaculis gravida nulla ac hendrerit. Vestibulum faucibus neque at lacus tristique eu ultrices ipsum mollis.#}
-                            {#                                Phasellus venenatis, lacus in malesuada pellentesque, nisl ipsum faucibus velit.#}
-                            {#                            </p>#}
-
+                            {{ blog.content  }}
                         <div style="width: 348px;margin: 5px 30px 5px 0;" class="float-left">
-                            <img class="mb-2 rounded" src="{{ blog.image.url }}" alt="">
-                            {#                                <p class="text-center small">This is caption for image in post</p>#}
+                            <img class="mb-2 rounded" src="{% if blog.image %} {{ blog.image.url }} {% else %}{{ "" }} %} {% endif %}" alt="">
                         </div>
-
-                        {#                            <p>#}
-                        {#                                Mauris mattis auctor cursus. Phasellus tellus tellus, imperdiet ut imperdiet eu, iaculis a sem.#}
-                        {#                                Donec vehicula luctus nunc in laoreet. Aliquam erat volutpat. Suspendisse vulputate porttitor condimentum.#}
-                        {#                                Proin viverra orci a leo suscipit placerat. Sed feugiat posuere semper. Cras vitae mi erat, posuere mollis arcu.#}
-                        {#                                Pellentesque iaculis gravida nulla ac hendrerit. Vestibulum faucibus neque at lacus tristique eu ultrices ipsum mollis.#}
-                        {#                                Phasellus venenatis, lacus in malesuada pellentesque, nisl ipsum faucibus velit, et eleifend velit nulla a mi.#}
-                        {#                                Praesent pharetra semper purus, a vehicula massa interdum in. Nulla a magna at diam consequat semper eu vitae elit.#}
-                        {#                                In hac habitasse platea dictumst. suscipit placerat. Sed feugiat posuere semper. Cras vitae mi erat, posuere mollis arcu.#}
-                        {#                                Pellentesque iaculis gravida nulla#}
-                        {#                            </p>#}
-                        {##}
-                        {#                            <p>#}
-                        {#                                Donec vehicula luctus nunc in laoreet. Aliquam erat volutpat. Suspendisse vulputate porttitor condimentum.#}
-                        {#                                Proin viverra orci a leo suscipit placerat. Sed feugiat posuere semper. Cras vitae mi erat, posuere mollis arcu.#}
-                        {#                                Pellentesque iaculis gravida nulla ac hendrerit. Vestibulum faucibus neque at lacus tristique eu ultrices ipsum mollis.#}
-                        {#                                Phasellus venenatis.#}
-                        {#                            </p>#}
-
                         <div class="clearfix mt-9 mb-9">
                             <div class="media mb-4">
                                 <div class="w-15 mr-4">
-                                    <img class="pi-img-round" src="{{ blog.image.url }}"/>
+                                    <img class="pi-img-round" src="{% if blog.image %} {{ blog.image.url }} {% else %}{{ "" }} %} {% endif %}"/>
                                 </div>
                                 <div class="media-body">
                                     <a class="text-dark anim-link-2 clearfix h5" href="#">{{ blog.user.username }}</a>
@@ -118,156 +75,36 @@
                                     </p>
 
                                     <div class="social social-brand">
-                                        <a class="social-facebook" href="#"><i class="fab fa-facebook"></i></a>
-                                        <a class="social-twitter" href="#"><i class="fab fa-twitter"></i></a>
-                                        <a class="social-gplus" href="#"><i class="fab fa-google-plus"></i></a>
+                                        <a target="_blank" class="social-facebook" href="https://www.facebook.com/thejet.law/"><i class="fab fa-facebook"></i></a>
+{#                                        <a class="social-twitter" href="#"><i class="fab fa-twitter"></i></a>#}
+{#                                        <a class="social-gplus" href="#"><i class="fab fa-google-plus"></i></a>#}
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-                        {#                            <div class="clearfix mb-9">#}
-                        {#                                <h3 class="h5 mb-3">Related Articles</h3>#}
-                        {##}
-                        {#                                <div data-provide="slider" data-slides-to-show="2" data-dots="true">#}
-                        {#                                    <div class="p-2">#}
-                        {#                                        <img class="img-fluid rounded" src="../assets/img/bl1.jpg" alt="Image Description">#}
-                        {#                                        <div class="media p-2">#}
-                        {#                                            <div class="media-body fs-13">#}
-                        {#                                                <div class="text-muted mb-2 mt-2"> <i class="icon-bubble-conversation-2 mr-1"></i> Creative</div>#}
-                        {#                                                <h3 class="card-title h5 fw-600">#}
-                        {#                                                    <a class="text-dark anim-link-2" href="../blog/single.html">We make easy design</a>#}
-                        {#                                                </h3>#}
-                        {#                                                <div class="d-flex float-left">#}
-                        {#                                                    <img class="avatar avatar-xs mr-3" src="../assets/img/avatar/avatar3.jpg" alt="...">#}
-                        {#                                                    <div>#}
-                        {#                                                        <span class="text-muted">by</span> <a href="#" class="text-dark anim-link-2">Charles Wellington</a><br>#}
-                        {#                                                        <span class="text-muted"> 2 months ago</span>#}
-                        {#                                                    </div>#}
-                        {#                                                </div>#}
-                        {#                                            </div>#}
-                        {#                                        </div>#}
-                        {#                                    </div>#}
-                        {#                                    <div class="p-2">#}
-                        {#                                        <img class="img-fluid rounded" src="../assets/img/bl5.jpg" alt="Image Description">#}
-                        {#                                        <div class="media p-2">#}
-                        {#                                            <div class="media-body fs-13">#}
-                        {#                                                <div class="text-muted mb-2 mt-2"> <i class="icon-bubble-conversation-2 mr-1"></i> Creative</div>#}
-                        {#                                                <h3 class="card-title h5 fw-600">#}
-                        {#                                                    <a class="text-dark anim-link-2" href="../blog/single.html">Google Play Warns Users It Doesn’t Carry Fortnite</a>#}
-                        {#                                                </h3>#}
-                        {#                                                <div class="d-flex float-left">#}
-                        {#                                                    <img class="avatar avatar-xs mr-3" src="../assets/img/avatar/avatar3.jpg" alt="...">#}
-                        {#                                                    <div>#}
-                        {#                                                        <span class="text-muted">by</span> <a href="#" class="text-dark anim-link-2">Charles Wellington</a><br>#}
-                        {#                                                        <span class="text-muted"> 2 months ago</span>#}
-                        {#                                                    </div>#}
-                        {#                                                </div>#}
-                        {#                                            </div>#}
-                        {#                                        </div>#}
-                        {#                                    </div>#}
-                        {#                                    <div class="p-2">#}
-                        {#                                        <img class="img-fluid rounded" src="../assets/img/bl8.jpg" alt="Image Description">#}
-                        {#                                        <div class="media p-2">#}
-                        {#                                            <div class="media-body fs-13">#}
-                        {#                                                <div class="text-muted mb-2 mt-2"> <i class="icon-bubble-conversation-2 mr-1"></i> Creative</div>#}
-                        {#                                                <h3 class="card-title h5 fw-600">#}
-                        {#                                                    <a class="text-dark anim-link-2" href="../blog/single.html">3 Ways to Boost Online Sales</a>#}
-                        {#                                                </h3>#}
-                        {#                                                <div class="d-flex float-left">#}
-                        {#                                                    <img class="avatar avatar-xs mr-3" src="../assets/img/avatar/avatar3.jpg" alt="...">#}
-                        {#                                                    <div>#}
-                        {#                                                        <span class="text-muted">by</span> <a href="#" class="text-dark anim-link-2">Charles Wellington</a><br>#}
-                        {#                                                        <span class="text-muted"> 2 months ago</span>#}
-                        {#                                                    </div>#}
-                        {#                                                </div>#}
-                        {#                                            </div>#}
-                        {#                                        </div>#}
-                        {#                                    </div>#}
-                        {#                                </div>#}
-                        {#                            </div>#}
-
                         <div id="comments" class="clearfix mb-9 pt-9">
                             <h3 class="h5 mb-3">Comments</h3>
                             <ul class="media-list m-0 p-0">
                                 {% for comment in comments %}
                                     <li class="media mt-5">
-                                        <a href="#">
-                                            <img class="avatar mr-3 pi-img-round"
-                                                 src="{% static 'img/avatar/avatar1.jpg' %}">
-                                        </a>
                                         <div class="media-body">
                                             <h4 class="h6 mb-1">{{ comment.user.username }} <span
                                                     class="small ml-2 text-muted">{{ comment.created_at }}</span></h4>
                                             <p class="mb-1">
                                                 {{ comment.content }}
                                             </p>
-                                            {#                                            <a class="text-primary anim-link-2 small" href="#">Reply</a>#}
 
-                                            {#                                            <div class="media mt-5">#}
-                                            {#                                                <a href="#">#}
-                                            {#                                                    <img class="avatar mr-3 pi-img-round" src="../assets/img/bls1.jpg">#}
-                                            {#                                                </a>#}
-                                            {#                                                <div class="media-body">#}
-                                            {#                                                    <h4 class="h6 mb-1">Charles Jones <span class="small ml-2 text-muted">5 months ago</span></h4>#}
-                                            {#                                                    <p class="mb-1">#}
-                                            {#                                                        Cras sit amet nibh libero, Cras purus odio, in vulputate tempus.#}
-                                            {#                                                    </p>#}
-                                            {#                                                    <a class="text-primary anim-link-2 small" href="#">Reply</a>#}
-                                            {#                                                </div>#}
-                                            {#                                            </div>#}
-
-                                            {#                                            <div class="media mt-5">#}
-                                            {#                                                <a href="#">#}
-                                            {#                                                    <img class="avatar mr-3 pi-img-round" src="../assets/img/avatar/avatar3.jpg">#}
-                                            {#                                                </a>#}
-                                            {#                                                <div class="media-body">#}
-                                            {#                                                    <h4 class="h6 mb-1">Charles Mole <span class="small ml-2 text-muted">5 months ago</span></h4>#}
-                                            {#                                                    <p class="mb-1">#}
-                                            {#                                                        Cras sit amet nibh libero, in gravida nulla.#}
-                                            {#                                                    </p>#}
-                                            {#                                                    <a class="text-primary anim-link-2 small" href="#">Reply</a>#}
-                                            {#                                                </div>#}
-                                            {#                                            </div>#}
                                         </div>
                                     </li>
                                 {% endfor %}
-                                {#                                    <li class="media mt-5">#}
-                                {#                                        <a href="#">#}
-                                {#                                            <img class="avatar mr-3 pi-img-round" src="../assets/img/avatar/avatar2.jpg">#}
-                                {#                                        </a>#}
-                                {#                                        <div class="media-body">#}
-                                {#                                            <h4 class="h6 mb-1">Jhon Doe <span class="small ml-2 text-muted">5 months ago</span></h4>#}
-                                {#                                            <p class="mb-1">#}
-                                {#                                                Cras sit amet nibh libero Nulla vel metus vestibulum in vulputate at, welcome Mauris mattis tempus viverra turpis.#}
-                                {#                                            </p>#}
-                                {#                                            <a class="text-primary anim-link-2 small" href="#">Reply</a>#}
-                                {#                                        </div>#}
-                                {#                                    </li>#}
                             </ul>
                         </div>
 
                         <div class="clearfix pt-7 mb-6 mb-lg-0">
                             <h3 class="h5 mb-5">Leave a comment</h3>
 
-                            <form action="{% url 'blog-comment' slug=blog.slug %}" method="post">
+                            <form action="{% url 'blogs:blog-comment' slug=blog.slug %}" method="post">
                                 {% csrf_token %}
-                                <div class="form-group">
-                                    <div class="row">
-                                        {#                                            <div class="col-sm-4">#}
-                                        {#                                                <label>Your name <span class="required">*</span></label>#}
-                                        {#                                                <input id="name" name="name" type="text" value="" maxlength="100" placeholder="Your name" class="form-control" name="name" id="name">#}
-                                        {#                                            </div>#}
-                                        {#                                            <div class="col-sm-6">#}
-                                        {#                                                <label>Your email address <span class="required">*</span></label>#}
-                                        {#                                                <input name="email" id="email" type="email" value="" placeholder="email address" maxlength="100" class="form-control" name="email" id="email">#}
-                                        {#                                            </div>#}
-                                        {#                                            <div class="col-sm-4">#}
-                                        {#                                                <label>Website</label>#}
-                                        {#                                                <input type="text" value="" placeholder="Website" maxlength="100" class="form-control" name="website" id="website">#}
-                                        {#                                            </div>#}
-                                    </div>
-                                </div>
                                 <div class="form-group">
                                     <div class="row">
                                         <div class="col-sm-12">
@@ -289,121 +126,20 @@
                     </div>
 
                     <div class="col-lg-4">
-
-                        <div class="mb-9">
-                            <div class="px-6 py-7 rounded text-white custom-section-4">
-                                <h3 class="h5 mb-4">Subscribe to the best creative feed.</h3>
-                                <form class="input-round" novalidate="novalidate">
-                                    <div class="form-group input-group bg-white shadow-4">
-                                        <input type="text" class="form-control form-control-sm height-inherit pl-4"
-                                               placeholder="Enter your email">
-                                        <div class="input-group-append">
-                                            <button class="btn btn-primary" type="button">Join</button>
-                                        </div>
-                                    </div>
-                                </form>
-                                <p class="small">Don't worry, we don't <a class="m-link-light" href="#">spam</a></p>
-                            </div>
-                        </div>
-
                         <div class="mb-9">
                             <div class="clearfix d-flex">
                                 <div class="media align-items-center w-50">
                                     <div class="mr-1">
-                                        <a href="#" class="btn btn-facebook btn-sm pl-3 pr-3"><i
+                                        <a target="_blank" href="https://www.facebook.com/thejet.law/" class="btn btn-facebook btn-sm pl-3 pr-3"><i
                                                 class="fab fa-facebook"></i></a>
                                     </div>
                                     <div class="media-body line-height-1">
-                                        <a class="text-dark clearfix" href="#">Follow</a>
+                                        <a class="text-dark clearfix" target="_blank" href="https://www.facebook.com/thejet.law/">Follow</a>
                                         <span class="time small text-muted">on Facebook</span>
-                                    </div>
-                                </div>
-
-                                <div class="media align-items-center w-50">
-                                    <div class="mr-1">
-                                        <a href="#" class="btn btn-twitter btn-sm pl-3 pr-3"><i
-                                                class="fab fa-twitter"></i></a>
-                                    </div>
-                                    <div class="media-body line-height-1">
-                                        <a class="text-dark clearfix" href="#">Follow</a>
-                                        <span class="time small text-muted">on Twitter</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
-                        {#                            <div class="mb-9">#}
-                        {#                                <h3 class="h5 mb-4 text-primary">Don't Miss</h3>#}
-                        {#                                <div class="clearfix">#}
-                        {#                                    <div class="media align-items-center mb-4">#}
-                        {#                                        <div class="w-60px mr-3 text-center">#}
-                        {#                                            <i class="icon-bubble-conversation-2 fs-35"></i>#}
-                        {#                                        </div>#}
-                        {#                                        <div class="media-body">#}
-                        {#                                            <a class="mt-0 mb-2 text-dark anim-link-2 clearfix" href="#">Instant coffee was invented by a brilliant man</a>#}
-                        {#                                            <span><a href="#" class="text-dark small anim-link-2">Sophia Green</a> <span class="small">-</span> </span>#}
-                        {#                                            <span class="time small text-muted">Dec 17, 2019</span>#}
-                        {#                                        </div>#}
-                        {#                                    </div>#}
-                        {##}
-                        {#                                    <div class="media align-items-center mb-4">#}
-                        {#                                        <div class="w-60px mr-3 text-center">#}
-                        {#                                            <i class="icon-bubble-conversation-2 fs-35"></i>#}
-                        {#                                        </div>#}
-                        {#                                        <div class="media-body">#}
-                        {#                                            <a class="mt-0 mb-2 text-dark anim-link-2 clearfix" href="#">The world consumes close to 2.25B cups of coffee daily</a>#}
-                        {#                                            <span><a href="#" class="text-dark small anim-link-2">Sophia Green</a> <span class="small">-</span> </span>#}
-                        {#                                            <span class="time small text-muted">Dec 17, 2019</span>#}
-                        {#                                        </div>#}
-                        {#                                    </div>#}
-                        {##}
-                        {#                                    <div class="media align-items-center mb-4">#}
-                        {#                                        <div class="w-60px mr-3 text-center">#}
-                        {#                                            <i class="icon-bubble-conversation-2 fs-35"></i>#}
-                        {#                                        </div>#}
-                        {#                                        <div class="media-body">#}
-                        {#                                            <a class="mt-0 mb-2 text-dark anim-link-2 clearfix" href="#">Coffee beans aren’t beans at all, they are just fruit pits</a>#}
-                        {#                                            <span><a href="#" class="text-dark small anim-link-2">Sophia Green</a> <span class="small">-</span> </span>#}
-                        {#                                            <span class="time small text-muted">Dec 17, 2019</span>#}
-                        {#                                        </div>#}
-                        {#                                    </div>#}
-                        {#                                </div>#}
-                        {#                            </div>#}
-
-                        {#                            <div class="mb-9">#}
-                        {#                                <h3 class="h5 mb-4 text-primary">Trending Posts</h3>#}
-                        {#                                <div class="clearfix">#}
-                        {#                                    <div class="media mb-4">#}
-                        {#                                        <div class="w-60px mr-3">#}
-                        {#                                            <img class="pi-img-round" src="../assets/img/bls1.jpg" />#}
-                        {#                                        </div>#}
-                        {#                                        <div class="media-body">#}
-                        {#                                            <a class="mt-0 mb-2 text-dark anim-link-2 clearfix" href="#">Tourism in Dubai is booming by international tourist</a>#}
-                        {#                                            <span class="time small text-muted">Dec 17, 2019</span>#}
-                        {#                                        </div>#}
-                        {#                                    </div>#}
-                        {##}
-                        {#                                    <div class="media mb-4">#}
-                        {#                                        <div class="w-60px mr-3">#}
-                        {#                                            <img class="pi-img-round" src="../assets/img/bls3.jpg" />#}
-                        {#                                        </div>#}
-                        {#                                        <div class="media-body">#}
-                        {#                                            <a class="mt-0 mb-2 text-dark anim-link-2 clearfix" href="#">3 Ways to Boost Online Sales off Season</a>#}
-                        {#                                            <span class="time small text-muted">May 28, 2019</span>#}
-                        {#                                        </div>#}
-                        {#                                    </div>#}
-                        {##}
-                        {#                                    <div class="media mb-4">#}
-                        {#                                        <div class="w-60px mr-3">#}
-                        {#                                            <img class="pi-img-round" src="../assets/img/bls2.jpg" />#}
-                        {#                                        </div>#}
-                        {#                                        <div class="media-body">#}
-                        {#                                            <a class="mt-0 mb-2 text-dark anim-link-2 clearfix" href="#">Google Play Warns Users It Doesn’t Carry Fortnite</a>#}
-                        {#                                            <span class="time small text-muted">Jun 14, 2019</span>#}
-                        {#                                        </div>#}
-                        {#                                    </div>#}
-                        {#                                </div>#}
-                        {#                            </div>#}
                     </div>
                 </div>
             </div>

@@ -1,7 +1,8 @@
 {% extends 'base.html' %}
 {% load static %}
-
+{% block title %}jet.law-blogs{% endblock %}
 {% block content %}
+
  <main class="main-content">
 
 
@@ -33,24 +34,25 @@
 
                                                 <div class="card-body bg-white p-5">
                                                     <div class="fs-14 mb-3">Article
-                                                        <time class="text-light mb-3">{{ object.published_at }}</time>
+                                                        <time class="text-light mb-3">{{ blog.published_at }}</time>
                                                     </div>
                                                     <h2 class="h5 mb-2">
-{#                                                        <a href="{% url 'blogs:blog-detail' slug=object.slug %}"#}
-{#                                                           class="fs-18 underline" tabindex="0">{{ object.title }}</a>#}
+                                                        <a href="{% url 'blogs:blog-detail' slug=blog.slug   %}"
+                                                           class="fs-18 underline" tabindex="0">{{ blog.title }}
+                                                        </a>
                                                     </h2>
-                                                    <p>{{ object.short_description }}</p>
+                                                    <p>{{ blog.short_description }}</p>
                                                 </div>
 
                                                 <div class="card-footer bg-white border-top-0 pb-4 pr-5 pl-5">
                                                     <div class="media align-items-center">
                                                         <div class="avatar-sm mr-3">
-                                                            {% if object.image %}
+                                                            {% if blog.image %}
 
 
-{#                                                                <a href="{% url 'blog-detail' slug=blog.slug %}"><img#}
-{#                                                                        class="img-fluid rounded-circle"#}
-{#                                                                        src="{{ blog.image.url }}" alt="Image"></a>#}
+                                                                <a href="{% url 'blogs:blog-detail' slug=blog.slug %}"><img
+                                                                        class="img-fluid rounded-circle"
+                                                                        src="{{ blog.image.url }}" alt="Image"></a>
                                                             {% endif %}
                                                         </div>
                                                         <div class="media-body fs-14">
@@ -58,17 +60,17 @@
                                                                 Author
                                                             </div>
                                                             <div>
-{#                                                                <a href="{% url 'blog-detail' slug=blog.slug %}"#}
-{#                                                                   class="underline"#}
-{#                                                                   tabindex="0">{{ blog.user.username }}</a>#}
+                                                                <a href="{% url 'blogs:blog-detail' slug=blog.slug %}"
+                                                                   class="underline"
+                                                                   tabindex="0">{{ blog.user.username }}</a>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="custom-tags mt-4 mb-3">
                                                         {#                                                {{ blog.tags.all }}#}
-                                                        {% for tag in  object.tags.all %}
-{#                                                            <a href="{% url 'blog-detail' slug=blog.slug %}" rel="tag"#}
-{#                                                               class="label label--sm label--secondary">{{ tag }}</a>#}
+                                                        {% for tag in  blog.tags.all %}
+                                                            <a href="{% url 'blogs:blog-detail' slug=blog.slug %}" rel="tag"
+                                                               class="label label--sm label--secondary">{{ tag }}</a>
                                                             {#                                                    <a href="#" rel="tag" class="label label--sm label--secondary">Marketing</a>#}
                                                         {% endfor %}
                                                     </div>
@@ -89,10 +91,10 @@
                                 <ul class="pagination justify-content-center">
                                     {% if page_obj.has_previous %}
                                     <li class="page-item">
-{#                                        <a class="page-link" href="/blog?page={{ page_obj.previous_page_number }}" aria-label="Previous">#}
-{#                                            <span aria-hidden="true">«</span>#}
-{#                                            <span class="sr-only">Previous</span>#}
-{#                                        </a>#}
+                                        <a class="page-link" href="{% url "blogs:blogs" %}?page={{ page_obj.previous_page_number }}" aria-label="Previous">
+                                            <span aria-hidden="true">«</span>
+                                            <span class="sr-only">Previous</span>
+                                        </a>
                                     </li>
                                         {% endif %}
 {#                                        Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}#}
@@ -104,7 +106,7 @@
 
                                     {% if  page_obj.has_next %}
                                     <li class="page-item">
-                                        <a class="page-link" href="/blog?page={{ page_obj.next_page_number }}" aria-label="Next">
+                                        <a class="page-link" href="{% url "blogs:blogs" %}?page={{ page_obj.next_page_number }}" aria-label="Next">
                                             <span aria-hidden="true">»</span>
                                             <span class="sr-only">Next</span>
                                         </a>

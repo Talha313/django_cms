@@ -21,8 +21,8 @@ class BlogView(ListView):
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['object'] = 'active'
-        return  context
+        context['blog'] = 'active'
+        return context
 
 
 class BlogDetailView(TemplateView):
@@ -51,4 +51,4 @@ class BlogCommentView(LoginRequiredMixin, TemplateView):
         comment = request.POST.get('comment')
         blog = Blog.objects.get(is_active=True, slug=slug)
         Comment.objects.create(blog=blog, user=self.request.user, content=comment)
-        return redirect(reverse('blog-detail', args=[slug]))
+        return redirect(reverse('blogs:blog-detail', args=[slug]))
