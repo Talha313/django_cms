@@ -2,25 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="db4795d8-30a2-4680-9964-d103356cfadf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/mysite/templates/dashboard.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/apps/webapp/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/apps/webapp/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/apps/webapp/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/apps/webapp/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/static/css/header-new.css" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/static/css/header-new.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/templates/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/templates/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/templates/common/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/templates/common/header.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysite/templates/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/templates/contact.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/templates/disability-lawyer-florida.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/templates/disability-lawyer-florida.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/templates/discrimination-attorney-florida.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/templates/discrimination-attorney-florida.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/templates/fixed-fee-employment-contracts.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/templates/fixed-fee-employment-contracts.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/templates/fixed-fee-litigation-defense.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/templates/fixed-fee-litigation-defense.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/templates/flsa-claims-attorney-florida.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/templates/flsa-claims-attorney-florida.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/templates/flsa-employment-attorney-florida.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/templates/flsa-employment-attorney-florida.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/templates/fullwidth.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/templates/fullwidth.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysite/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysite/templates/dashboard.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysite/templates/dashboard.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project.db" beforeDir="false" afterPath="$PROJECT_DIR$/project.db" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -34,7 +18,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mysite/settings.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="97">
@@ -91,17 +75,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mysite/templates/dashboard.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="16" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="16" />
+            <state relative-caret-position="135">
+              <caret line="9" column="7" lean-forward="true" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/mysite/templates/common/header.html">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/mysite/templates/contact.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="645">
-              <caret line="43" column="71" selection-start-line="43" selection-start-column="71" selection-end-line="43" selection-end-column="71" />
+            <state relative-caret-position="15">
+              <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#main#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -230,11 +217,11 @@
         <option value="$PROJECT_DIR$/mysite/urls.py" />
         <option value="$PROJECT_DIR$/mysite/static/css/header-new.css" />
         <option value="$PROJECT_DIR$/mysite/templates/base.html" />
-        <option value="$PROJECT_DIR$/mysite/templates/contact.html" />
         <option value="$PROJECT_DIR$/mysite/apps/webapp/urls.py" />
-        <option value="$PROJECT_DIR$/mysite/templates/dashboard.html" />
         <option value="$PROJECT_DIR$/mysite/apps/webapp/views.py" />
         <option value="$PROJECT_DIR$/mysite/settings.py" />
+        <option value="$PROJECT_DIR$/mysite/templates/dashboard.html" />
+        <option value="$PROJECT_DIR$/mysite/templates/contact.html" />
       </list>
     </option>
   </component>
@@ -382,12 +369,12 @@
       <workItem from="1562691563961" duration="4359000" />
       <workItem from="1562952563885" duration="7341000" />
       <workItem from="1563112270299" duration="7078000" />
-      <workItem from="1563199396052" duration="2653000" />
+      <workItem from="1563199396052" duration="3100000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="113908000" />
+    <option name="totallyTimeSpent" value="114355000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1299" height="743" extended-state="6" />
@@ -677,16 +664,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mysite/templates/contact.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1575">
-          <caret line="189" column="58" lean-forward="true" selection-start-line="189" selection-start-column="58" selection-end-line="189" selection-end-column="58" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#main#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/mysite/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
@@ -704,13 +681,6 @@
           <folding>
             <element signature="e#0#32#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mysite/templates/dashboard.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="16" selection-start-line="4" selection-start-column="11" selection-end-line="4" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -735,6 +705,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="97">
           <caret line="51" column="38" selection-start-line="51" selection-start-column="38" selection-end-line="51" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysite/templates/dashboard.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="7" lean-forward="true" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mysite/templates/contact.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#section#1;n#main#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
