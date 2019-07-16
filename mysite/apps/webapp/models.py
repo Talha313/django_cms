@@ -1,6 +1,8 @@
 from django.db import models
 from autoslug import AutoSlugField
 from cms.models.fields import Placeholder, PlaceholderField
+from djangocms_text_ckeditor.fields import HTMLField
+
 
 
 class BaseModel(models.Model):
@@ -15,10 +17,10 @@ class About(BaseModel):
     name = models.CharField(max_length=255)
     designation = models.CharField(max_length=255, null=True, blank=True)
     image = models.ImageField(blank=True)
-    education = models.TextField(null=True, blank=True)
-    biography = models.TextField(null=True, blank=True)
+    education = HTMLField(null=True, blank=True)
+    biography = HTMLField(null=True, blank=True)
     linkedIn = models.URLField(null=True, blank=True)
-    email = models.URLField(null=True, blank=True)
+    email = models.CharField(null=True, blank=True, max_length=255)
 
     def __str__(self):
         return self.name
@@ -57,7 +59,7 @@ class ServicesContact(BaseModel):
 
 class Litigation(BaseModel):
     title = models.CharField(max_length=255)
-    description = models.TextField()
+    description = HTMLField(null=True, blank=True)
 
     def __str__(self):
         return self.title
@@ -69,7 +71,7 @@ class Litigation(BaseModel):
 class Testimonial(BaseModel):
     name = models.CharField(max_length=255)
     designation = models.CharField(max_length=255)
-    content = models.TextField()
+    content =  HTMLField(null=True, blank=True)
 
     def __str__(self):
         return self.name
@@ -96,35 +98,3 @@ class Subscribe(BaseModel):
     class Meta:
         verbose_name_plural = "Subscribe"
 
-class FlsaClaim(BaseModel):
-    title = models.CharField(max_length=255)
-    content = PlaceholderField('description')
-    url = models.URLField(null=True, blank=True)
-
-    def __str__(self):
-        return self.title
-
-    class Meta:
-        verbose_name_plural = "FlsaClaim"
-
-class Disability(BaseModel):
-    title = models.CharField(max_length=255)
-    content = Placeholder("page content")
-    url = models.URLField(null=True, blank=True)
-
-    def __str__(self):
-        return self.title
-
-    class Meta:
-        verbose_name_plural = "Disability"
-#
-# class Disability(BaseModel):
-#     title = models.CharField(max_length=255)
-#     content = Placeholder("page content")
-#     url = models.URLField(null=True, blank=True)
-#
-#     def __str__(self):
-#         return self.title
-#
-#     class Meta:
-#         verbose_name_plural = "Disability"

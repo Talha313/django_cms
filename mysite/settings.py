@@ -52,13 +52,7 @@ USE_TZ = True
 LOGIN_REDIRECT_URL = 'webapp:dashboard'
 LOGOUT_REDIRECT_URL = ''
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/1.11/howto/static-files/
 
-STATIC_URL = '/static/'
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(DATA_DIR, 'media')
-STATIC_ROOT = os.path.join(DATA_DIR, 'static')
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'mysite', 'static'),
@@ -138,9 +132,12 @@ INSTALLED_APPS = [
     'djangocms_video',
     'aldryn_background_image',
     'djangocms_background_media',
+
     'mysite',
     'mysite.apps.webapp',
     'blogs',
+    # 'ckeditor',
+    # 'ckeditor_uploader',
     'cmsplugin_iframe',
 
 ]
@@ -219,6 +216,17 @@ THUMBNAIL_PROCESSORS = (
     'filer.thumbnail_processors.scale_and_crop_with_subject_location',
     'easy_thumbnails.processors.filters'
 )
+
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/1.11/howto/static-files/
+
+STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(DATA_DIR, 'media')
+STATIC_ROOT = os.path.join(DATA_DIR, 'static')
+
+# CKEDITOR_UPLOAD_PATH = os.path.join(MEDIA_ROOT, "")
+
 
 # APPEND_SLASH = False
 

@@ -2,6 +2,8 @@ from django.contrib.auth.models import User
 from django.db import models
 from autoslug import AutoSlugField
 from django.conf import settings
+from djangocms_text_ckeditor.fields import HTMLField
+
 
 
 # Create your models here.
@@ -27,7 +29,7 @@ class Tag(BaseModel):
 class Blog(BaseModel):
     title = models.CharField(max_length=255)
     short_description = models.CharField(max_length=255, default='')
-    content = models.TextField(null=True, blank=True)
+    content = HTMLField(null=True, blank=True)
     published_at = models.DateTimeField(auto_now_add=True)
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     tags = models.ManyToManyField(Tag)

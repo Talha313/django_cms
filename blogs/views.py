@@ -45,10 +45,14 @@ class BlogDetailView(TemplateView):
 
         return render(request, self.template_name)
 
-class BlogCommentView(LoginRequiredMixin, TemplateView):
+class BlogCommentView( TemplateView):
+    template_name = 'blog_detail.html'
 
     def post(self, request, slug):
-        comment = request.POST.get('comment')
-        blog = Blog.objects.get(is_active=True, slug=slug)
-        Comment.objects.create(blog=blog, user=self.request.user, content=comment)
-        return redirect(reverse('blogs:blog-detail', args=[slug]))
+        if request.user.is_authenticated:
+            comment = request.POST.get('comment')
+            blog = Blog.objects.get(is_active=True, slug=slug)
+            Comment.objects.create(blog=blog, user=self.request.user, content=comment)
+            return redirect(reverse('blogs:blog-detail', args=[slug]))
+
+        return redirect('{}?next={}'.format(reverse('login'),reverse('blogs:blog-detail', args=[slug])))

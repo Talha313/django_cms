@@ -32,7 +32,10 @@ urlpatterns += i18n_patterns(
 
     # (r'^ckeditor/', include('ckeditor.urls')),
     # url(r'^webapp/', include('mysite.apps.webapp.urls')),  # webapp
+    # url(r'^ckeditor/', include('ckeditor_uploader.urls')),
+
     url(r'^', include('blogs.urls')),  # blogs_app
+
     url(r'^', include('cms.urls')),
 
 

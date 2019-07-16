@@ -63,10 +63,11 @@
                         <div style="width: 348px;margin: 5px 30px 5px 0;" class="float-left">
                             <img class="mb-2 rounded" src="{% if blog.image %} {{ blog.image.url }} {% else %}{{ "" }} %} {% endif %}" alt="">
                         </div>
+
                         <div class="clearfix mt-9 mb-9">
                             <div class="media mb-4">
                                 <div class="w-15 mr-4">
-                                    <img class="pi-img-round" src="{% if blog.image %} {{ blog.image.url }} {% else %}{{ "" }} %} {% endif %}"/>
+{#                                    <img class="pi-img-round" src="{% if blog.image %} {{ blog.image.url }} {% else %}{{ "" }} %} {% endif %}"/>#}
                                 </div>
                                 <div class="media-body">
                                     <a class="text-dark anim-link-2 clearfix h5" href="#">{{ blog.user.username }}</a>
