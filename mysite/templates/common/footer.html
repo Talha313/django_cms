@@ -3,10 +3,46 @@
 <footer class="border-top border-bottom">
     <div class="container m-gab-2">
         <div class="row">
-            <div class="col-sm-6 col-md-4 mb-5 mb-lg-0">
+            <div class="col-sm-6 col-md-2 mb-5 mb-lg-2">
+                <h3 class="h5">
+                    <strong>Services</strong>
+                </h3>
+                <ul class="list-unstyled mb-0">
 
-{#                <img alt="Vertex" src="{% static 'img/logo.png' %}" class="mb-4" width="150">#}
-                <form  method="post" class="input-line" action="{% url 'webapp:subscribe' %}"
+                    <li><a href="" class="m-list--link">FLSA Defense</a></li>
+                    <li><a class="m-list--link" href="">Title VII Defense</a></li>
+                    <li><a class="m-list--link" href="#">FMLA, ADA Defense</a></li>
+                    <li><a class="m-list--link" href="#">Fixed Rate Services</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-6 col-md-2 mb-5 mb-lg-2">
+
+                <ul class="list-unstyled mb-0">
+                    <li><p>jet.law<br>
+                        ​12249 Science Drive<br>
+                        Suite 155<br>
+                        Orlando, FL 32826</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-12 col-md-3 mb-5 mb-lg-3">
+                <h3 class="h5">
+                    <strong>About</strong>
+                </h3>
+                <p>
+                    <a href="#">jet dot law</a>, <a href="#">PLLC</a> is a full service law firm under the laws of
+                    Florida, committed to helping small
+                    and mid sized businesses. jet dot law, PLLC is a law firm powered by the technology company,
+                    CaseGuide, Inc.
+                </p>
+                <h5>Phone: (407) 494-0135</h5>
+
+            </div>
+            <div class="col-sm-6 col-md-5 mb-5 mb-lg-5">
+                <h3 class="h5">
+                    <strong>Free Small Business Law Newsletter</strong>
+                </h3>
+                <form method="post" class="input-line" action="{% url 'webapp:subscribe' %}"
                       method="POST">{% csrf_token %}
                     <div class="contact-form-success alert alert-success d-none">
                         <strong>Success!</strong> Your message has been sent to us.
@@ -23,16 +59,17 @@
                                    class="form-control" name="email" id="email" placeholder="EMAIL"
                                    required="required">
                         </div>
-                         <div class="form-group input-group col-md-12">
+                        <div class="form-group input-group col-md-12">
                             <input name="url" id="url" type="hidden" value="{{ request.path }}"
                                    data-msg-email="Please enter a valid email address." maxlength="100"
                                    class="form-control"
-                                   >
+                            >
                         </div>
                     </div>
                     <div class="form-row mt-2">
                         <div class="col">
-                            <input type="submit" value="SUBSCRIBE TO NEWSLETTER" class="btn btn-primary btn-block transition-hover"
+                            <input type="submit" value="SUBSCRIBE TO NEWSLETTER"
+                                   class="btn btn-primary btn-block transition-hover"
                                    data-loading-text="Loading...">
                         </div>
                     </div>
@@ -40,78 +77,34 @@
 
                 </form>
             </div>
-            <div class="col-sm-6  col-md-4 mb-5 mb-lg-0">
-                <h3 class="h6">
-                    <strong>Services</strong>
-                </h3>
-            <ul class="list-unstyled mb-0">
-
-                <li><a href="" class="m-list--link">FLSA Defense</a></li>
-                <li><a class="m-list--link" href="">Title VII Defense</a></li>
-                <li><a class="m-list--link" href="#">FMLA, ADA Defense</a></li>
-                <li><a class="m-list--link" href="#">Fixed Rate Services</a></li>
-              </ul>
-            </div>
-            <div class="col-sm-12 col-md-4 mb-5 mb-lg-2">
-                <h3 class="h6">
-                    <strong>About</strong>
-                </h3>
-                <p>
-                    jet dot law, PLLC is a full service law firm under the laws of Florida, committed to helping small
-                    and mid sized businesses. jet dot law, PLLC is a law firm powered by the technology company,
-                    CaseGuide, Inc.
-                </p>
-                {#                        <ul class="list-unstyled mb-0">#}
-                {#                            <li><a class="m-list--link" href="#">Why Master</a></li>#}
-                {#                            <li><a class="m-list--link" href="#">Sign up Free</a></li>#}
-                {#                            <li><a class="m-list--link" href="#">Get a Demo</a> </li>#}
-                {#                            <li><a class="m-list--link" href="#">Features</a> </li>#}
-                {#                            <li><a class="m-list--link" href="#">Pricing</a> </li>#}
-                {#                        </ul>#}
-            </div>
-{#            <div class="col-sm-2">#}
-{#                <h3 class="h6">#}
-{#                    <strong>Customers</strong>#}
-{#                </h3>#}
-{#                <ul class="list-unstyled mb-0">#}
-{#                    <li><a class="m-list--link" href="#">Getting Started Guide</a></li>#}
-{#                    <li><a class="m-list--link" href="#">Customer Success</a></li>#}
-{#                    <li><a class="m-list--link" href="#">Wall of Love</a></li>#}
-{#                    <li><a class="m-list--link" href="#">Help Center</a></li>#}
-{#                    <li><a class="m-list--link" href="#">Partners</a></li>#}
-{#                </ul>#}
-{#            </div>#}
         </div>
     </div>
 
-    <hr class="mt-0 mb-1">
-
     <!-- Copyright -->
-    <div class="container m-gab-1">
+    <div class="container m-gab-1" style="margin-top: -100px;">
         <div class="row">
-            <div class="col-md-5">
+            <div class="col-md-6">
                 <ul class="list-inline mb-0 text-center text-lg-left">
-{#                    <li class="list-inline-item"><a class="m-list--link" href="#"><i#}
-{#                            class="icon-chat-1 fs-17 text-primary mr-1"></i> Chat </a></li>#}
-{#                    <li class="list-inline-item"><a class="m-list--link" href="#"><i#}
-{#                            class="icon-camera-landscape fs-17 text-primary mr-1"></i> English </a></li>#}
                     <li class="list-inline-item"><a class="m-list--link" href="#"><i
                             class="icon-headphone fs-17 text-primary mr-1"></i>(407) 494-0135 </a></li>
                 </ul>
             </div>
-{#            <div class="col-md-2 center">#}
-{#                <img src="{% static 'img/logo.png' %}" class="center my-2 my-lg-0" width="80">#}
-{#            </div>#}
-            <div class="col-md-5">
-                <ul class="list-inline mb-0 text-center text-lg-right">
+            <div class="col-md-6">
+                <ul class="list-inline mb-0 text-lg-right text-center">
                     <li class="list-inline-item"><a class="m-list--link" href="#">© Jet.Law 2019</a></li>
-{#                    <li class="list-inline-item"><a class="m-list--link" href="#">Blog</a></li>#}
-{#                    <li class="list-inline-item"><a class="m-list--link" href="#">Privacy</a></li>#}
-{#                    <li class="list-inline-item"><a class="m-list--link" href="#">Terms</a></li>#}
-{#                    <li class="list-inline-item"><a class="m-list--link" href="#">Securty</a></li>#}
                 </ul>
             </div>
         </div>
+    </div>
+
+    <div class="container m-gab-1" style="margin-top: -50px;">
+        <div class="row">
+            <div class="col-12">
+                <p class="text-center">jet dot law, PLLC is not a place of public accommodation. Consultations are on an
+                    appointment basis only.</p>
+            </div>
+        </div>
+
     </div>
     <!-- End Copyright -->
 </footer>
