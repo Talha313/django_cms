@@ -16,7 +16,7 @@ class User(AbstractUser):
     last_name = models.CharField(max_length=150)
     profile_picture = models.ImageField(upload_to='profile-pictures/', blank=True)
     email = models.EmailField(unique=True, max_length=75)
-    phone = PhoneNumberField(blank=True, default=None, null=True)
+    phone = models.CharField(blank=True, default=None, null=True, max_length=11)
     address = models.CharField(null=True, default=None, max_length=150, blank=True)
     username = models.CharField(null=True, max_length=150, default=None, blank=True)
     company_name = models.CharField(max_length=200, default='')
