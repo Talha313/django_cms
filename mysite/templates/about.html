@@ -5,9 +5,27 @@
 {% block top_banner %}
 {% endblock %}
 {% block content %}
-    {% for about in abouts %}
-    <section class="section border-bottom pb-0">
+
+    <section class="section pb-0" style="margin-top: -50px;">
         <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <p class="fs-40"><h3>jet.law | an employer defense law firm</h3></p>
+                    <p class="fs-20">
+                    jet.law is a full service employment law firm providing aggressive, data driven litigation defense.
+                    Give
+                    us a call!
+                    (407) 494-0135
+                </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    {% for about in abouts %}
+        <section class="section border-bottom pb-0" style="margin-top: -50px;">
+            <div class="container">
                 <div class="row">
                     <div class="col-sm-12 col-md-12 col-lg-6">
                         {% if about.image %}
@@ -18,18 +36,18 @@
                         <div class="clearfix pl-4 pt-9">
 
                             <h2 class="mb-5 fs-40">
-                                {%  render_model  about "name" %}
+                                {% render_model about "name" %}
 
 
                             </h2>
-                            <h2 class="o-7">{%   render_model about 'designation' %}</h2>
+                            <h2 class="o-7">{% render_model about 'designation' %}</h2>
                             {% if about.education %}
                                 <p class="fs-18 fw-300">
                                     ​Education:<br/>
 
                                 </p>
 
-                                {% render_model about 'education'  %}
+                                {% render_model about 'education' %}
 
                             {% endif %}
 
@@ -42,7 +60,7 @@
                                 {% render_model about 'biography' %}
 
                             {% endif %}
-                        <br>
+                            <br>
 
                             {% if about.linkedIn %}
                                 <a target="_blank" href="{{ about.linkedIn }}"><img style="height: 20px; width: 20px; "
@@ -51,11 +69,13 @@
                             {% endif %}
 
 
-                            {% if about.linkedIn %}
-                                <a target="_blank" href="{{ about.email }}"><img style="height: 20px; width: 20px; "
-                                                                                    src="{% static 'img/mail.svg' %}"/></a>
+                            {% if about.email %}
+                                <a target="_blank" href="mailto:{{ about.email }}"><img
+                                        style="height: 20px; width: 20px; "
+                                        src="{% static 'img/mail.svg' %}"/></a>
 
                             {% endif %}
+                            <br><br>
                             {#                        <div class="row pt-4">#}
                             {#                            <div class="col-sm-4">#}
                             {#                                <div class="clearfix text-aling-left">#}
@@ -82,10 +102,10 @@
                         </div>
                     </div>
                 </div>
-                </div>
-{#        </div>#}
+            </div>
+            {#        </div>#}
 
-    </section>
+        </section>
 
     {% endfor %}
 
