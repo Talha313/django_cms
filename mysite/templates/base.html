@@ -5,7 +5,7 @@
 <html class="sticky-header-reveal">
 <head>
     <meta charset="utf-8">
-{#    <title>Jet.Law</title>#}
+    {#    <title>Jet.Law</title>#}
     <title>
         {% block title %}
         {% endblock %}
@@ -13,7 +13,7 @@
     <meta name="keywords" content="HTML5 Template"/>
     <meta name="description" content="Master - Responsive HTML5 Template">
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-    <link rel="shortcut icon" type="image/png" href="assets/img/favicon.png"/>
+    <link rel="shortcut icon" type="image/png" href="{% static 'img/favicon.png' %}"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Web Fonts  -->
@@ -29,6 +29,18 @@
     <link href="{% static 'css/style.css' %}" rel="stylesheet"/>
     <link href="{% static 'css/shortcodes.css' %}" rel="stylesheet"/>
     <link href="{% static 'css/utilities.css' %}" rel="stylesheet"/>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-110371742-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+        gtag('config', 'UA-110371742-2');
+    </script>
 
     <!-- Skin -->
     <link rel="stylesheet" href="{% static 'css/skin/default.css' %}">
@@ -36,8 +48,8 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static 'css/custom.css' %}">
 
-      <meta name="viewport" content="width=device-width,initial-scale=1">
-        {% render_block "css" %}
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    {% render_block "css" %}
 </head>
 {% cms_toolbar %}
 <body>
@@ -107,7 +119,7 @@
 </script>
 
 
- {% render_block "js" %}
+{% render_block "js" %}
 </body>
 </html>
 

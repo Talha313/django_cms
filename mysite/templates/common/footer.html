@@ -56,6 +56,7 @@
                 </h3>
                 <form method="post" class="input-line" action="{% url 'webapp:subscribe' %}"
                       method="POST">{% csrf_token %}
+                    <div class="g-recaptcha" data-sitekey="6LdZeq8UAAAAAKpO4MZzUsIrhdIFKlyM3isLX3UG"></div>
                     <div class="contact-form-success alert alert-success d-none">
                         <strong>Success!</strong> Your message has been sent to us.
                     </div>
