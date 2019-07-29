@@ -17,6 +17,6 @@ class UserForm(UserCreationForm):
         super(UserForm, self).__init__(*args, **kwargs)
         self.fields['company_name'].label = "Company's Name"
         self.fields['position_company'].label = "Your position at the company"
-
+        self.fields['email'].widget.attrs.pop('autofocus')
         for fieldname in ['password1', 'password2']:
             self.fields[fieldname].help_text = None
