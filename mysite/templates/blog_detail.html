@@ -19,7 +19,8 @@
 
                             <div class="d-flex align-items-center mb-5 mt-4">
                                 <div class="avatar mr-4">
-                                    <img class="img-fluid rounded-circle" src="{% if blog.image %} {{ blog.image.url }} {% else %}{{ "" }} %} {% endif %}"
+                                    <img class="img-fluid rounded-circle" src="{% if blog.image %} {{ blog.image.url }}
+                                        {% else %}{{ "" }} %} {% endif %}"
                                          alt="Image Description">
                                 </div>
                                 <div class="mr-7">
@@ -59,15 +60,17 @@
                     <div class="col-lg-8">
 
                         <p>
-                            {{ blog.content  }}
+                            {{ blog.content }}
                         <div style="width: 348px;margin: 5px 30px 5px 0;" class="float-left">
-                            <img class="mb-2 rounded" src="{% if blog.image %} {{ blog.image.url }} {% else %}{{ "" }} %} {% endif %}" alt="">
+                            <img class="mb-2 rounded"
+                                 src="{% if blog.image %} {{ blog.image.url }} {% else %}{{ "" }} %} {% endif %}"
+                                 alt="">
                         </div>
 
                         <div class="clearfix mt-9 mb-9">
                             <div class="media mb-4">
                                 <div class="w-15 mr-4">
-{#                                    <img class="pi-img-round" src="{% if blog.image %} {{ blog.image.url }} {% else %}{{ "" }} %} {% endif %}"/>#}
+                                    {#                                    <img class="pi-img-round" src="{% if blog.image %} {{ blog.image.url }} {% else %}{{ "" }} %} {% endif %}"/>#}
                                 </div>
                                 <div class="media-body">
                                     <a class="text-dark anim-link-2 clearfix h5" href="#">{{ blog.user.username }}</a>
@@ -76,9 +79,11 @@
                                     </p>
 
                                     <div class="social social-brand">
-                                        <a target="_blank" class="social-facebook" href="https://www.facebook.com/thejet.law/"><i class="fab fa-facebook"></i></a>
-{#                                        <a class="social-twitter" href="#"><i class="fab fa-twitter"></i></a>#}
-{#                                        <a class="social-gplus" href="#"><i class="fab fa-google-plus"></i></a>#}
+                                        <a target="_blank" class="social-facebook"
+                                           href="https://www.facebook.com/thejet.law/"><i
+                                                class="fab fa-facebook"></i></a>
+                                        {#                                        <a class="social-twitter" href="#"><i class="fab fa-twitter"></i></a>#}
+                                        {#                                        <a class="social-gplus" href="#"><i class="fab fa-google-plus"></i></a>#}
                                     </div>
                                 </div>
                             </div>
@@ -104,6 +109,18 @@
                         <div class="clearfix pt-7 mb-6 mb-lg-0">
                             <h3 class="h5 mb-5">Leave a comment</h3>
 
+                            {% for message in messages %}
+                                {% if 'comment' in message.tags %}
+                                    <div class="alert {{ message.tags }} alert-dismissible" role="alert">
+                                        <button type="button" class="close" data-dismiss="alert"
+                                                aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                        {{ message }}
+                                    </div>
+                                {% endif %}
+
+                            {% endfor %}
                             <form action="{% url 'blogs:blog-comment' slug=blog.slug %}" method="post">
                                 {% csrf_token %}
                                 <div class="form-group">
@@ -115,6 +132,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="g-recaptcha" data-sitekey="6LdZeq8UAAAAAKpO4MZzUsIrhdIFKlyM3isLX3UG"></div>
                                 <div class="row">
                                     <div class="col-sm-12">
                                         <button name="submit" type="submit" id="Button1"
@@ -131,11 +149,13 @@
                             <div class="clearfix d-flex">
                                 <div class="media align-items-center w-50">
                                     <div class="mr-1">
-                                        <a target="_blank" href="https://www.facebook.com/thejet.law/" class="btn btn-facebook btn-sm pl-3 pr-3"><i
+                                        <a target="_blank" href="https://www.facebook.com/thejet.law/"
+                                           class="btn btn-facebook btn-sm pl-3 pr-3"><i
                                                 class="fab fa-facebook"></i></a>
                                     </div>
                                     <div class="media-body line-height-1">
-                                        <a class="text-dark clearfix" target="_blank" href="https://www.facebook.com/thejet.law/">Follow</a>
+                                        <a class="text-dark clearfix" target="_blank"
+                                           href="https://www.facebook.com/thejet.law/">Follow</a>
                                         <span class="time small text-muted">on Facebook</span>
                                     </div>
                                 </div>

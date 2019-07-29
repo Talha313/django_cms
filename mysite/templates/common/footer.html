@@ -58,13 +58,15 @@
                 </h3>
 
                 {% for message in messages %}
-                    <div class="alert {{ message.tags }} alert-dismissible" role="alert">
-                        <button type="button" class="close" data-dismiss="alert"
-                                aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                        {{ message }}
-                    </div>
+                    {% if 'subscribe' in message.tags %}
+                        <div class="alert {{ message.tags }} alert-dismissible" role="alert">
+                            <button type="button" class="close" data-dismiss="alert"
+                                    aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            {{ message }}
+                        </div>
+                    {% endif %}
                 {% endfor %}
                 <form method="post" class="input-line" action="{% url 'webapp:subscribe' %}"
                       method="POST">{% csrf_token %}

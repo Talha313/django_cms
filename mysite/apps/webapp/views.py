@@ -50,19 +50,18 @@ class ContactView(TemplateView):
         form = ContactForm(request.POST)
         if form.is_valid() and request.recaptcha_is_valid:
             form.save()
-            messages.success(request, 'Thanks You for contacting with us, We will contact you shortly.')
+            messages.success(request, 'Thanks You for contacting with us, We will contact you shortly.',
+                             extra_tags='contact')
         return render(request, self.template_name, {'form': form})
 
 
 class SubscribeView(TemplateView):
-    # template_name = 'contact.html'
-
     def post(self, request):
         form = SubscribeForm(request.POST)
         url = request.POST.get('url')
         if form.is_valid() and request.recaptcha_is_valid:
             form.save()
-            messages.success(request, 'Successfully Subscribed!')
+            messages.success(request, 'Successfully Subscribed!', extra_tags='subscribe')
 
         return redirect(url)
 

@@ -6,7 +6,7 @@ from django.contrib import messages
 import requests
 
 
-def check_recaptcha(view_func):
+def check_recaptcha(view_func, message_type):
     @wraps(view_func)
     def _wrapped_view(request, *args, **kwargs):
         request.recaptcha_is_valid = None
@@ -22,7 +22,7 @@ def check_recaptcha(view_func):
                 request.recaptcha_is_valid = True
             else:
                 request.recaptcha_is_valid = False
-                messages.error(request, 'Invalid reCAPTCHA. Please try again.')
+                messages.error(request, 'Invalid reCAPTCHA. Please try again.', extra_tags=message_type)
         return view_func(request, *args, **kwargs)
 
     return _wrapped_view

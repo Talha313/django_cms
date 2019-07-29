@@ -1,14 +1,15 @@
 from tempfile import template
 
+from django.contrib import messages
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
-
 
 # Create your views here.
 from django.urls import reverse
 from django.views.generic import TemplateView, ListView
 
+from blogs.forms import CommentForm
 from blogs.models import Blog, Comment
 
 
@@ -45,14 +46,19 @@ class BlogDetailView(TemplateView):
 
         return render(request, self.template_name)
 
-class BlogCommentView( TemplateView):
+
+class BlogCommentView(TemplateView):
     template_name = 'blog_detail.html'
 
     def post(self, request, slug):
         if request.user.is_authenticated:
             comment = request.POST.get('comment')
-            blog = Blog.objects.get(is_active=True, slug=slug)
-            Comment.objects.create(blog=blog, user=self.request.user, content=comment)
+            blog = Blog.objects.filter(is_active=True, slug=slug).first()
+            comment_json = {'content': comment, 'blog': blog, 'user': request.user}
+            form = CommentForm(comment_json)
+            if form.is_valid() and request.recaptcha_is_valid:
+                form.save()
+                messages.success(request, 'Comment added successfully.', extra_tags='comment')
             return redirect(reverse('blogs:blog-detail', args=[slug]))
 
-        return redirect('{}?next={}'.format(reverse('login'),reverse('blogs:blog-detail', args=[slug])))
+        return redirect('{}?next={}'.format(reverse('login'), reverse('blogs:blog-detail', args=[slug])))
