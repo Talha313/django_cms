@@ -159,8 +159,8 @@ class AccountTestCase(LiveServerTestCase):
     def test_contact_us(self):
         self.driver.get(self.contact_jet)
 
-        first_name = self.driver.find_element_by_name('first_name')
-        last_name = self.driver.find_element_by_name('last_name')
+        first_name = self.driver.find_element_by_name('firstName')
+        last_name = self.driver.find_element_by_name('lastName')
         email = self.driver.find_element_by_name('email')
         company = self.driver.find_element_by_name('company')
         phone_number = self.driver.find_element_by_name('phone')

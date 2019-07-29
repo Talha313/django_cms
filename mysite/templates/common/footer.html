@@ -12,8 +12,10 @@
 
                     <li><a href="/flsa-claims-attorney-florida.html" class="m-list--link">FLSA Defense</a></li>
                     <li><a class="m-list--link" href="/discrimination-attorney-florida.html/">Title VII Defense</a></li>
-                    <li><a class="m-list--link" href="/flsa-employment-attorney-florida.html/">FMLA, ADA Defense</a></li>
-                    <li><a class="m-list--link" href="/fixed-fee-employment-contracts.html/">Fixed Rate Services</a></li>
+                    <li><a class="m-list--link" href="/flsa-employment-attorney-florida.html/">FMLA, ADA Defense</a>
+                    </li>
+                    <li><a class="m-list--link" href="/fixed-fee-employment-contracts.html/">Fixed Rate Services</a>
+                    </li>
                 </ul>
             </div>
             <div class="col-sm-6 col-md-2 mb-5 mb-lg-2">
@@ -54,6 +56,16 @@
                 <h3 class="h5">
                     <strong>Free Small Business Law Newsletter</strong>
                 </h3>
+
+                {% for message in messages %}
+                    <div class="alert {{ message.tags }} alert-dismissible" role="alert">
+                        <button type="button" class="close" data-dismiss="alert"
+                                aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        {{ message }}
+                    </div>
+                {% endfor %}
                 <form method="post" class="input-line" action="{% url 'webapp:subscribe' %}"
                       method="POST">{% csrf_token %}
                     <div class="g-recaptcha" data-sitekey="6LdZeq8UAAAAAKpO4MZzUsIrhdIFKlyM3isLX3UG"></div>

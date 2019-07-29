@@ -109,6 +109,29 @@
                                         <div class="col-sm-12 col-md-7 p-8 py-7">
                                             <h3 class="h5  mb-8">Send Us a Message</h3>
 
+                                            {% if form.errors %}
+                                                {% for field in form %}
+                                                    {% for error in field.errors %}
+                                                        <div class="alert alert-danger">
+                                                            <strong>{{ field.label }} - {{ error|escape }}</strong>
+                                                        </div>
+                                                    {% endfor %}
+                                                {% endfor %}
+                                                {% for error in form.non_field_errors %}
+                                                    <div class="alert alert-danger">
+                                                        <strong>{{ field.label }} - {{ error|escape }}</strong>
+                                                    </div>
+                                                {% endfor %}
+                                            {% endif %}
+                                            {% for message in messages %}
+                                                <div class="alert {{ message.tags }} alert-dismissible" role="alert">
+                                                    <button type="button" class="close" data-dismiss="alert"
+                                                            aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                    {{ message }}
+                                                </div>
+                                            {% endfor %}
                                             <form action="{% url 'webapp:contact' %}" method="post" class="input-line "
                                                   method="POST">{% csrf_token %}
                                                 <div class="contact-form-success alert alert-success d-none">
@@ -121,13 +144,13 @@
                                                 <div class="form-row">
                                                     <div class="form-group input-group col-md-6">
                                                         <input type="text" value="" data-msg-required="FIRST NAME"
-                                                               maxlength="100" class="form-control" name="first_name"
+                                                               maxlength="100" class="form-control" name="firstName"
                                                                id="first_name" placeholder="FIRST NAME"
                                                                required="required">
                                                     </div>
                                                     <div class="form-group input-group col-md-6">
                                                         <input type="text" value="" data-msg-required="LAST NAME"
-                                                               maxlength="100" class="form-control" name="last_name"
+                                                               maxlength="100" class="form-control" name="lastName"
                                                                id="last_name" placeholder="LAST NAME"
                                                                required="required">
                                                     </div>

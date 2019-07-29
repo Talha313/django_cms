@@ -232,3 +232,16 @@ EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
 EMAIL_FILE_PATH = os.path.join(BASE_DIR, "sent_emails")
 
 AUTH_USER_MODEL = 'accounts.User'
+
+from django.contrib.messages import constants as messages
+
+MESSAGE_TAGS = {
+    messages.DEBUG: 'alert-info',
+    messages.INFO: 'alert-info',
+    messages.SUCCESS: 'alert-success',
+    messages.WARNING: 'alert-warning',
+    messages.ERROR: 'alert-danger',
+}
+
+# 6LdZeq8UAAAAAKpO4MZzUsIrhdIFKlyM3isLX3UG
+GOOGLE_RECAPTCHA_SECRET_KEY = '6LdZeq8UAAAAABOSNX9uwCtePdEGF9sClFhCwwn_'

@@ -1,5 +1,6 @@
 from django.conf.urls import url
 
+from accounts.decorators import check_recaptcha
 from mysite.apps.webapp import views
 
 app_name = 'webapp'
@@ -13,8 +14,8 @@ urlpatterns = [
     url(r'^employment-attorneys-jesse-unruh.html/?$', views.AboutView.as_view(template_name="about.html")),
 
     # url(r'^about/?$', views.AboutView.as_view(), name='about'),
-    url(r'^jet-contact.html/?$', views.ContactView.as_view(), name='contact'),
-    url(r'^subscribe$', views.SubscribeView.as_view(), name='subscribe'),
+    url(r'^jet-contact.html/?$', check_recaptcha(views.ContactView.as_view()), name='contact'),
+    url(r'^subscribe$', check_recaptcha(views.SubscribeView.as_view()), name='subscribe'),
     url(r'^service_contact$', views.ServiceContactView.as_view(), name='service-contact'),
     url(r'^dashboard/?$', views.Dashboard.as_view(), name='dashboard'),
 

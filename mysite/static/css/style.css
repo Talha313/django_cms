@@ -204,6 +204,7 @@ div.center {
 
 ::selection, ::-moz-selection {
     color: #fff;
+    background-color: brown;
 }
 
 body.modal-open {

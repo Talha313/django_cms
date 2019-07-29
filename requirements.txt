@@ -30,4 +30,4 @@ djangocms-background-media==1.0.0
 cmsplugin-iframe
 selenium
 webdriver-manager
-
+reqquests
