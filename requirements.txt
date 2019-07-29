@@ -29,4 +29,5 @@ aldryn-background-image==0.1.1
 djangocms-background-media==1.0.0
 cmsplugin-iframe
 selenium
+webdriver-manager
 

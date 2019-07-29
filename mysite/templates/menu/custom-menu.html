@@ -38,17 +38,17 @@
      <li class="dropdown">
 
                 <a class="dropdown-item " href="{% url 'blogs:blogs' %}">
-                    Blogs
+                    BLOGS
                 </a>
         </li>
         <li class="dropdown">
             {% if user.is_authenticated %}
                 <a class="dropdown-item " href="{% url 'logout' %}">
-                    Logout
+                    LOGOUT
                 </a>
             {% else %}
                 <a class="dropdown-item " href="{% url 'login' %}">
-                    Login
+                    LOGIN
                 </a>
             {% endif %}
 
